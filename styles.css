@@ -1553,3 +1553,19 @@ h3 { margin-bottom: 18px; font-size: clamp(29px, 3vw, 44px); line-height: 1.04; 
     gap: 12px;
   }
 }
+
+  .site-footnote {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+  .site-footnote p {
+  margin: 0;
+  font-size: 0.62rem;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+}
