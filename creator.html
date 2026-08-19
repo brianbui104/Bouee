@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Brian Duc-Huy Bui, founder and mechanical designer of Bouée Calibre 1." />
+  <meta name="theme-color" content="#090a0a" />
+  <title>Brian Bui — Creator of Bouée Calibre 1</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Libre+Caslon+Display&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .site-header {
+      padding-bottom: 12px;
+    }
+
+    .site-header.is-scrolled {
+      padding-bottom: 8px;
+    }
+
+    .brand-logo-image {
+      display: block;
+      width: 100px;
+      height: auto;
+      filter: invert(1);
+    }
+
+    .site-header .brand,
+    .site-footer .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+    }
+
+    .site-footer .footer-brand .brand-logo-image {
+      width: 158px;
+    }
+
+    .creator-page {
+      overflow: hidden;
+    }
+
+    .creator-hero {
+      position: relative;
+      min-height: 92svh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #050606;
+    }
+
+    .creator-hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 64% center;
+      opacity: 0.68;
+      filter: saturate(0.72) contrast(1.06);
+    }
+
+    .creator-hero-shade {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(5, 6, 6, 0.98) 0%, rgba(5, 6, 6, 0.84) 38%, rgba(5, 6, 6, 0.22) 72%),
+        linear-gradient(0deg, rgba(5, 6, 6, 0.92) 0%, rgba(5, 6, 6, 0.12) 62%);
+    }
+
+    .creator-hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 160px;
+      padding-bottom: 92px;
+    }
+
+    .creator-hero h1 {
+      max-width: 980px;
+      margin: 0 0 30px;
+      font-family: var(--serif);
+      font-size: clamp(62px, 9vw, 138px);
+      font-weight: 400;
+      line-height: 0.89;
+      letter-spacing: -0.05em;
+    }
+
+    .creator-hero-copy {
+      max-width: 650px;
+      margin: 0;
+      color: rgba(244, 242, 237, 0.73);
+      font-size: clamp(17px, 1.5vw, 21px);
+      font-weight: 300;
+    }
+
+    .creator-hero-details {
+      margin-top: 48px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 30px;
+      color: rgba(244, 242, 237, 0.47);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .creator-hero-details span + span::before {
+      content: "·";
+      margin-right: 30px;
+      color: var(--blue-bright, #2b79a6);
+    }
+
+    .creator-intro {
+      position: relative;
+      padding-block: clamp(120px, 14vw, 205px);
+      color: var(--black);
+      background: var(--paper);
+    }
+
+    .creator-intro-grid {
+      width: min(var(--shell), 1180px);
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      gap: clamp(64px, 10vw, 150px);
+      align-items: start;
+    }
+
+    .creator-section-number {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 30px;
+      color: #716957;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .creator-section-number::after {
+      content: "";
+      width: 72px;
+      height: 1px;
+      background: rgba(9, 10, 10, 0.2);
+    }
+
+    .creator-intro h2,
+    .creator-philosophy h2,
+    .creator-closing h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+    }
+
+    .creator-intro h2 {
+      max-width: 590px;
+      font-size: clamp(48px, 6vw, 88px);
+      line-height: 0.98;
+    }
+
+    .creator-intro-copy {
+      padding-top: 58px;
+    }
+
+    .creator-intro-copy .creator-lead {
+      margin: 0 0 30px;
+      font-family: var(--serif);
+      font-size: clamp(26px, 2.45vw, 38px);
+      line-height: 1.25;
+      color: rgba(9, 10, 10, 0.9);
+    }
+
+    .creator-intro-copy p:not(.creator-lead) {
+      max-width: 670px;
+      margin: 0 0 22px;
+      color: rgba(9, 10, 10, 0.65);
+    }
+
+    .creator-facts {
+      margin: 48px 0 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(9, 10, 10, 0.16);
+    }
+
+    .creator-facts div {
+      padding: 23px 18px 0 0;
+    }
+
+    .creator-facts dt {
+      color: rgba(9, 10, 10, 0.43);
+      font-size: 9px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .creator-facts dd {
+      margin: 8px 0 0;
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .creator-work {
+      padding-block: clamp(115px, 13vw, 190px);
+      background: #0c0e0e;
+    }
+
+    .creator-work-heading {
+      max-width: 830px;
+      margin-bottom: 82px;
+    }
+
+    .creator-work-heading h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(48px, 6.4vw, 92px);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .creator-work-list {
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(244, 242, 237, 0.16);
+    }
+
+    .creator-work-list article {
+      min-height: 310px;
+      padding: 34px clamp(28px, 3.2vw, 52px) 34px 0;
+      border-bottom: 1px solid rgba(244, 242, 237, 0.16);
+    }
+
+    .creator-work-list article + article {
+      padding-left: clamp(28px, 3.2vw, 52px);
+      border-left: 1px solid rgba(244, 242, 237, 0.16);
+    }
+
+    .creator-work-list span {
+      color: var(--blue-bright, #2b79a6);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+    }
+
+    .creator-work-list h3 {
+      margin: 76px 0 18px;
+      font-size: clamp(28px, 3vw, 42px);
+    }
+
+    .creator-work-list p {
+      margin: 0;
+      color: rgba(244, 242, 237, 0.56);
+    }
+
+    .creator-philosophy {
+      position: relative;
+      min-height: 820px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #050606;
+    }
+
+    .creator-philosophy-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.53;
+      filter: saturate(0.65);
+    }
+
+    .creator-philosophy-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5, 6, 6, 0.96) 0%, rgba(5, 6, 6, 0.75) 48%, rgba(5, 6, 6, 0.25) 100%);
+    }
+
+    .creator-philosophy-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding-block: 140px;
+    }
+
+    .creator-philosophy h2 {
+      margin-bottom: 34px;
+      font-size: clamp(52px, 6.8vw, 96px);
+      line-height: 0.97;
+    }
+
+    .creator-philosophy .lead {
+      max-width: 680px;
+      margin-bottom: 24px;
+    }
+
+    .creator-philosophy p:not(.eyebrow):not(.lead) {
+      max-width: 640px;
+      color: rgba(244, 242, 237, 0.58);
+    }
+
+    .creator-credentials {
+      padding-block: clamp(110px, 12vw, 170px);
+      color: var(--black);
+      background: var(--paper);
+    }
+
+    .creator-credentials-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1.22fr);
+      gap: clamp(72px, 11vw, 160px);
+      align-items: start;
+    }
+
+    .creator-credentials h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(45px, 5vw, 74px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .creator-credential-list {
+      margin: 0;
+    }
+
+    .creator-credential-list div {
+      padding: 24px 0;
+      display: grid;
+      grid-template-columns: minmax(150px, 0.72fr) 1.28fr;
+      gap: 28px;
+      border-bottom: 1px solid rgba(9, 10, 10, 0.16);
+    }
+
+    .creator-credential-list dt {
+      color: rgba(9, 10, 10, 0.43);
+      font-size: 9px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .creator-credential-list dd {
+      margin: 0;
+      color: rgba(9, 10, 10, 0.75);
+    }
+
+    .creator-closing {
+      padding-block: clamp(125px, 15vw, 220px);
+      text-align: center;
+      background: #070808;
+    }
+
+    .creator-closing h2 {
+      max-width: 940px;
+      margin-inline: auto;
+      font-size: clamp(54px, 7vw, 105px);
+      line-height: 0.95;
+    }
+
+    .creator-closing p:not(.eyebrow) {
+      max-width: 650px;
+      margin: 34px auto 0;
+      color: rgba(244, 242, 237, 0.6);
+    }
+
+    .creator-closing-actions {
+      margin-top: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .site-navigation a[aria-current="page"] {
+      color: var(--white);
+    }
+
+    .site-navigation a[aria-current="page"]::after {
+      transform: scaleX(1) !important;
+    }
+
+    @media (max-width: 900px) {
+      .creator-hero {
+        min-height: 86svh;
+      }
+
+      .creator-hero-image {
+        object-position: 58% center;
+      }
+
+      .creator-hero-shade {
+        background:
+          linear-gradient(0deg, rgba(5, 6, 6, 0.98) 0%, rgba(5, 6, 6, 0.62) 54%, rgba(5, 6, 6, 0.16) 100%),
+          linear-gradient(90deg, rgba(5, 6, 6, 0.76), transparent 88%);
+      }
+
+      .creator-hero-content {
+        padding-bottom: 72px;
+      }
+
+      .creator-intro-grid,
+      .creator-credentials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .creator-intro-copy {
+        padding-top: 0;
+      }
+
+      .creator-work-list {
+        grid-template-columns: 1fr;
+      }
+
+      .creator-work-list article {
+        min-height: 0;
+        padding: 38px 0 45px;
+      }
+
+      .creator-work-list article + article {
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .creator-work-list h3 {
+        margin-top: 38px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .site-header,
+      .site-header.is-scrolled {
+        padding-bottom: 8px;
+      }
+
+      .brand-logo-image {
+        width: 108px;
+      }
+
+      .site-footer .footer-brand .brand-logo-image {
+        width: 138px;
+      }
+
+      .creator-hero-details span + span::before {
+        display: none;
+      }
+
+      .creator-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .creator-facts div {
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(9, 10, 10, 0.12);
+      }
+
+      .creator-credential-list div {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .creator-closing-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html#top" aria-label="Bouée Calibre 1 home">
+      <img class="brand-logo-image" src="assets/bouee-logo.png" alt="Bouée" />
+    </a>
+
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>
+      <span class="sr-only">Toggle navigation</span>
+      <i></i>
+      <i></i>
+    </button>
+
+    <nav class="site-navigation" id="site-navigation" data-navigation>
+      <a href="index.html#overview">Overview</a>
+      <a href="index.html#calibre">The Movement</a>
+      <a href="index.html#dial">Dial Side</a>
+      <a href="index.html#complications">Complications</a>
+      <a href="index.html#movement">Caseback</a>
+      <a href="index.html#specifications">Specifications</a>
+      <a href="creator.html" aria-current="page">Creator</a>
+      <a class="nav-action" href="index.html#contact">Enquire</a>
+    </nav>
+
+  </header>
+
+  <div class="page-progress" aria-hidden="true"><span data-page-progress></span></div>
+
+  <main class="creator-page" id="main">
+    <section class="creator-hero">
+      <img class="creator-hero-image" src="assets/back.jpg" alt="Rear architecture of the Bouée Calibre 1 movement" />
+      <div class="creator-hero-shade"></div>
+
+      <div class="shell creator-hero-content">
+        <p class="eyebrow">The creator</p>
+        <h1>Brian<br />Duc-Huy Bui</h1>
+        <p class="creator-hero-copy">
+          Mechanical engineering student and independent movement designer behind Bouée Calibre 1.
+        </p>
+        <div class="creator-hero-details" aria-label="Creator details">
+          <span>Toronto, Canada</span>
+          <span>Mechanical engineering</span>
+          <span>Founder &amp; mechanical designer</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="creator-intro">
+      <div class="shell creator-intro-grid">
+        <div>
+          <div class="creator-section-number"><span>01</span><span>Beginning</span></div>
+          <h2>The project began with the movement.</h2>
+        </div>
+
+        <div class="creator-intro-copy">
+          <p class="creator-lead">
+            Calibre 1 started in April 2024 as an attempt to design a complete mechanical watch movement from first principles.
+          </p>
+          <p>
+            Rather than modifying an existing calibre, the gear train, winding system, escapement, flying tourbillon, perpetual calendar, plates, bridges, and jewel layout as one connected system.
+          </p>
+          <p>
+            The result is an original hand-wound movement of more than 250 components, combining a one-minute flying tourbillon with a 48-month mechanical calendar programme.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="creator-work">
+      <div class="shell">
+        <div class="creator-work-heading">
+          <p class="eyebrow">The work</p>
+          <h2>One project. Every layer.</h2>
+        </div>
+
+        <div class="creator-work-list">
+          <article>
+            
+            <h3>Architecture</h3>
+            <p>
+              The movement was laid out around its complications, with the power path, clearances, component support, and assembly sequence considered together from the first design.
+            </p>
+          </article>
+
+          <article>
+            
+            <h3>Validation</h3>
+            <p>
+              Gear ratios, torque, tolerance stacks, endshake, and component interaction were evaluated through calculation, CAD review, and enlarged 6× physical prototypes.
+            </p>
+          </article>
+
+          <article>
+            
+            <h3>Presentation</h3>
+            <p>
+              The mechanical work was carried through to the visual identity, technical renders, exploded animation, product specifications, and website for the completed calibre.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="creator-philosophy">
+      <img class="creator-philosophy-image" src="assets/calibre-front.jpg" alt="Front architecture of Bouée Calibre 1" loading="lazy" />
+      <div class="creator-philosophy-overlay"></div>
+
+      <div class="shell creator-philosophy-content">
+        <p class="eyebrow">Approach</p>
+        <h2>Engineering before decoration.</h2>
+        <p class="lead">
+          Every visible decision begins with a mechanical reason.
+        </p>
+        <p>
+          The movement is treated as both a machine and an arrangement of space. Structure, service access, power transfer, and legibility determine the architecture first; finishing is then used to clarify the result rather than disguise it.
+        </p>
+      </div>
+    </section>
+
+    <section class="creator-credentials">
+      <div class="shell creator-credentials-grid">
+        <div>
+          <p class="eyebrow eyebrow-dark">Background</p>
+          <h2>Mechanical design, developed through practice.</h2>
+        </div>
+
+        <dl class="creator-credential-list">
+          <div>
+            <dt>Education</dt>
+            <dd>BASc Mechanical Engineering, University of Toronto</dd>
+          </div>
+          <div>
+            <dt>Additional study</dt>
+            <dd>Engineering Business Minor and PEY Co-op</dd>
+          </div>
+          <div>
+            <dt>Design</dt>
+            <dd>SOLIDWORKS Design Professional</dd>
+          </div>
+          <div>
+            <dt>Manufacturing</dt>
+            <dd>Machining and welding training, George Brown College</dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>Toronto, Ontario, Canada</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="creator-closing">
+      <div class="shell">
+        <p class="eyebrow">Bouée Calibre 1</p>
+        <h2>The first movement is complete.</h2>
+        <p>
+          Calibre 1 is the first complete movement developed under Bouée. Only eight pieces will ever be produced.
+        </p>
+        <div class="creator-closing-actions">
+          <a class="button button-primary" href="index.html#calibre">Explore the calibre</a>
+          <a class="text-link" href="index.html#contact">Arrange a presentation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-layout">
+      <div>
+        <a class="brand footer-brand" href="index.html#top" aria-label="Bouée home">
+          <img class="brand-logo-image" src="assets/bouee-logo.png" alt="Bouée" loading="lazy" />
+        </a>
+        <p>Independent watch movement development.<br />Toronto, Canada.</p>
+      </div>
+      <div>
+        <strong>Product</strong>
+        <a href="index.html#calibre">The Calibre</a>
+        <a href="index.html#dial">Dial Side</a>
+        <a href="index.html#complications">Complications</a>
+        <a href="index.html#movement">Caseback</a>
+      </div>
+      <div>
+        <strong>Information</strong>
+        <a href="index.html#specifications">Specifications</a>
+        <a href="creator.html">Creator</a>
+        <a href="index.html#contact">Private enquiry</a>
+        <span>brian.bui@bouee.ca</span>
+      </div>
+      </div>
+      <div class="shell site-footnote">
+    <p>
+    © 2026 Bouée. Calibre 1 is an independently developed mechanical watch
+    project created for educational and personal purposes. The watches shown
+    are not offered for public sale. Any displayed pricing is illustrative
+    only and does not constitute an offer for sale. Select private commissions
+    may be undertaken solely through established personal relationships and are subject to separately agreed terms.
+    </p>
+    </div>
+  </footer>
+</body>
+</html>
