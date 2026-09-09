@@ -1,0 +1,7 @@
+# Bouée crawler rules
+# This file allows search engines and AI search crawlers to access the site.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://bouee.ca/sitemap.xml
